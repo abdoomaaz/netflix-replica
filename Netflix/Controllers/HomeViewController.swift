@@ -19,10 +19,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedTableView)
-        homeFeedTableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         
         homeFeedTableView.dataSource = self
         homeFeedTableView.delegate = self
+        
+        homeFeedTableView.tableHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
     }
     
     override func viewDidLayoutSubviews() {
