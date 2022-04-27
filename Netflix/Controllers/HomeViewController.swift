@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let headerTitles = ["Trending Movies","Popular","Trending TV", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTableView :UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -55,8 +56,20 @@ class HomeViewController: UIViewController {
 // MARK: Tableview
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        headerTitles[section]
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        // TODO: use case from array
+        guard let headerView = view as? UITableViewHeaderFooterView else {return}
+        headerView.textLabel?.font = .systemFont(ofSize: 18, weight:.semibold)
+        headerView.textLabel?.frame = CGRect(x: headerView.bounds.origin.x, y: headerView.bounds.origin.y, width: headerView.bounds.width, height: headerView.bounds.height)
+        headerView.textLabel?.textColor = .white
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return headerTitles.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
