@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		6E1E378928144C1000AFF3C5 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		6EC45207281D6CE800E1DDD3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6EEB8310281386AA00B17734 /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EEB8313281386AA00B17734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EEB8315281386AA00B17734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				6EEB8312281386AA00B17734 /* Netflix */,
+				6EC45207281D6CE800E1DDD3 /* Config.xcconfig */,
 				6EEB8311281386AA00B17734 /* Products */,
 			);
 			sourceTree = "<group>";
