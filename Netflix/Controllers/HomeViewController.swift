@@ -23,8 +23,9 @@ class HomeViewController: UIViewController {
         homeFeedTableView.dataSource = self
         homeFeedTableView.delegate = self
         configureNavbar()
-
+        
         homeFeedTableView.tableHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        getTrendingMovies()
     }
     
     func configureNavbar() {
@@ -50,7 +51,14 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
         // TODO: when scrolling up while in middle screen show nav bar
     }
-    
+    private func getTrendingMovies(){
+        MovieApiCaller.shared.getTrendingMovies { results in
+            switch results {
+            case .success(let movies): print(movies)
+            case .failure(let error): print(error)
+            }
+        }
+    }
 }
 
 // MARK: Tableview
