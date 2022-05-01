@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTableView.tableHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
-        getTrendingMovies()
+        fetchData()
     }
     
     func configureNavbar() {
@@ -51,8 +51,33 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
         // TODO: when scrolling up while in middle screen show nav bar
     }
-    private func getTrendingMovies(){
-        MovieApiCaller.shared.getTrendingMovies { results in
+    private func fetchData(){
+        // TODO: show data in tableview
+        TmdbApiCaller.shared.getTrendingMovies { results in
+            switch results {
+            case .success(let movies): print(movies)
+            case .failure(let error): print(error)
+            }
+        }
+        TmdbApiCaller.shared.getTopRatedMovies { results in
+            switch results {
+            case .success(let movies): print(movies)
+            case .failure(let error): print(error)
+            }
+        }
+        TmdbApiCaller.shared.getPopularMovies { results in
+            switch results {
+            case .success(let movies): print(movies)
+            case .failure(let error): print(error)
+            }
+        }
+        TmdbApiCaller.shared.getUpcomingMovies { results in
+            switch results {
+            case .success(let movies): print(movies)
+            case .failure(let error): print(error)
+            }
+        }
+        TmdbApiCaller.shared.getTrendingTv { results in
             switch results {
             case .success(let movies): print(movies)
             case .failure(let error): print(error)
