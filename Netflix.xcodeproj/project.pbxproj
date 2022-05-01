@@ -10,6 +10,7 @@
 		6E1E378A28144C1000AFF3C5 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E378928144C1000AFF3C5 /* HeroHeaderUIView.swift */; };
 		6EC45209281D729400E1DDD3 /* MovieAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC45208281D729400E1DDD3 /* MovieAPICaller.swift */; };
 		6EC4520B281D859500E1DDD3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4520A281D859500E1DDD3 /* Movie.swift */; };
+		6EC4520D281EF53200E1DDD3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4520C281EF53200E1DDD3 /* Extensions.swift */; };
 		6EEB8314281386AA00B17734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEB8313281386AA00B17734 /* AppDelegate.swift */; };
 		6EEB8316281386AA00B17734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEB8315281386AA00B17734 /* SceneDelegate.swift */; };
 		6EEB8318281386AA00B17734 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEB8317281386AA00B17734 /* MainTabBarViewController.swift */; };
@@ -27,6 +28,7 @@
 		6EC45207281D6CE800E1DDD3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6EC45208281D729400E1DDD3 /* MovieAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPICaller.swift; sourceTree = "<group>"; };
 		6EC4520A281D859500E1DDD3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		6EC4520C281EF53200E1DDD3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6EEB8310281386AA00B17734 /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EEB8313281386AA00B17734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EEB8315281386AA00B17734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		6EEB83352813AB5600B17734 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EC4520C281EF53200E1DDD3 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				6E1E378A28144C1000AFF3C5 /* HeroHeaderUIView.swift in Sources */,
 				6EEB833028138DC700B17734 /* DownloadsViewController.swift in Sources */,
 				6EEB8318281386AA00B17734 /* MainTabBarViewController.swift in Sources */,
+				6EC4520D281EF53200E1DDD3 /* Extensions.swift in Sources */,
 				6EEB8314281386AA00B17734 /* AppDelegate.swift in Sources */,
 				6EEB8316281386AA00B17734 /* SceneDelegate.swift in Sources */,
 				6EC4520B281D859500E1DDD3 /* Movie.swift in Sources */,

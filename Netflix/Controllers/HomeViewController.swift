@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private let headerTitles = ["Trending Movies","Popular","Trending TV", "Upcoming Movies", "Top Rated"]
+    private let headerTitles = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTableView :UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -72,6 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         // TODO: use case from array
         guard let headerView = view as? UITableViewHeaderFooterView else {return}
         headerView.textLabel?.font = .systemFont(ofSize: 18, weight:.semibold)
+        headerView.textLabel?.text = headerView.textLabel?.text?.capitalizeFirstLetter()
         headerView.textLabel?.frame = CGRect(x: headerView.bounds.origin.x, y: headerView.bounds.origin.y, width: headerView.bounds.width, height: headerView.bounds.height)
         headerView.textLabel?.textColor = .white
     }
