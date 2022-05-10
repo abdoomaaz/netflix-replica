@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     private let headerTitles = ["Trending Movies", "Trending TV", "Popular", "Upcoming Movies", "Top Rated"]
     
-    private let homeFeedTableView :UITableView = {
+    private let homeFeedTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
@@ -25,7 +25,6 @@ class HomeViewController: UIViewController {
         configureNavbar()
         
         homeFeedTableView.tableHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
-        fetchData()
     }
     
     func configureNavbar() {
@@ -43,46 +42,13 @@ class HomeViewController: UIViewController {
         
     }
     
-    // Thanks to github & stackoverflow
+    // Thanks to github & stackoverflow | Unsticks the navbar and shows it when back up
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let defaultOffset = view.safeAreaInsets.top
         let offset = scrollView.contentOffset.y + defaultOffset
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
         // TODO: when scrolling up while in middle screen show nav bar
-    }
-    private func fetchData(){
-        // TODO: show data in tableview
-        TmdbApiCaller.shared.getTrendingMovies { results in
-            switch results {
-            case .success(let movies): print(movies)
-            case .failure(let error): print(error)
-            }
-        }
-        TmdbApiCaller.shared.getTopRatedMovies { results in
-            switch results {
-            case .success(let movies): print(movies)
-            case .failure(let error): print(error)
-            }
-        }
-        TmdbApiCaller.shared.getPopularMovies { results in
-            switch results {
-            case .success(let movies): print(movies)
-            case .failure(let error): print(error)
-            }
-        }
-        TmdbApiCaller.shared.getUpcomingMovies { results in
-            switch results {
-            case .success(let movies): print(movies)
-            case .failure(let error): print(error)
-            }
-        }
-        TmdbApiCaller.shared.getTrendingTv { results in
-            switch results {
-            case .success(let movies): print(movies)
-            case .failure(let error): print(error)
-            }
-        }
     }
 }
 
@@ -111,9 +77,45 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        //        cell.textLabel?.text = "text"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {return UITableViewCell()}
+        
+        switch indexPath.section {
+        case Sections.TrendingMovies.rawValue:
+            TmdbApiCaller.shared.getTrendingMovies { results in
+                switch results {
+                case .success(let shows): cell.configure(with: shows)
+                case .failure(let error): print(error)
+                }
+            }
+        case Sections.TopRated.rawValue:
+            TmdbApiCaller.shared.getTopRatedMovies { results in
+                switch results {
+                case .success(let shows): cell.configure(with: shows)
+                case .failure(let error): print(error)
+                }
+            }
+        case Sections.Popular.rawValue:
+            TmdbApiCaller.shared.getPopularMovies { results in
+                switch results {
+                case .success(let shows): cell.configure(with: shows)
+                case .failure(let error): print(error)
+                }
+            }
+        case Sections.upcoming.rawValue:
+            TmdbApiCaller.shared.getUpcomingMovies { results in
+                switch results {
+                case .success(let shows): cell.configure(with: shows)
+                case .failure(let error): print(error)
+                }
+            }
+        case Sections.TrendingTv.rawValue:
+            TmdbApiCaller.shared.getTrendingTv { results in
+                switch results {
+                case .success(let shows): cell.configure(with: shows)
+                case .failure(let error): print(error)
+                }
+            }
+        default:
             return UITableViewCell()
         }
         return cell
@@ -126,4 +128,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+}
+
+enum Sections: Int {
+    case TrendingMovies = 0
+    case TrendingTv = 1
+    case Popular = 2
+    case upcoming = 3
+    case TopRated = 4
 }
