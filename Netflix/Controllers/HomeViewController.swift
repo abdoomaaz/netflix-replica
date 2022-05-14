@@ -83,36 +83,36 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case Sections.TrendingMovies.rawValue:
             TmdbApiCaller.shared.getTrendingMovies { results in
                 switch results {
-                case .success(let shows): cell.configure(with: shows)
-                case .failure(let error): print(error)
+                    case .success(let shows): cell.configure(with: shows)
+                    case .failure(let error): print(error)
                 }
             }
         case Sections.TopRated.rawValue:
             TmdbApiCaller.shared.getTopRatedMovies { results in
                 switch results {
-                case .success(let shows): cell.configure(with: shows)
-                case .failure(let error): print(error)
+                    case .success(let shows): cell.configure(with: shows)
+                    case .failure(let error): print(error)
                 }
             }
         case Sections.Popular.rawValue:
             TmdbApiCaller.shared.getPopularMovies { results in
                 switch results {
-                case .success(let shows): cell.configure(with: shows)
-                case .failure(let error): print(error)
+                    case .success(let shows): cell.configure(with: shows)
+                    case .failure(let error): print(error)
                 }
             }
         case Sections.upcoming.rawValue:
             TmdbApiCaller.shared.getUpcomingMovies { results in
                 switch results {
-                case .success(let shows): cell.configure(with: shows)
-                case .failure(let error): print(error)
+                    case .success(let shows): cell.configure(with: shows)
+                    case .failure(let error): print(error)
                 }
             }
         case Sections.TrendingTv.rawValue:
             TmdbApiCaller.shared.getTrendingTv { results in
                 switch results {
-                case .success(let shows): cell.configure(with: shows)
-                case .failure(let error): print(error)
+                    case .success(let shows): cell.configure(with: shows)
+                    case .failure(let error): print(error)
                 }
             }
         default:
