@@ -77,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				6EEB8312281386AA00B17734 /* Netflix */,
-				6EEB83352813AB5600B17734 /* Resources */,
 				6EEB8311281386AA00B17734 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +100,7 @@
 				6EEB832728138CFF00B17734 /* Controllers */,
 				6EEB8317281386AA00B17734 /* TabBarViewController.swift */,
 				6EEB831E281386AE00B17734 /* LaunchScreen.storyboard */,
+				6EEB83352813AB5600B17734 /* Resources */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Netflix/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -405,7 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_FILE = Netflix/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
