@@ -65,7 +65,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.textLabel?.font = .systemFont(ofSize: 18, weight:.semibold)
         headerView.textLabel?.text = headerView.textLabel?.text?.capitalizeFirstLetter()
         headerView.textLabel?.frame = CGRect(x: headerView.bounds.origin.x, y: headerView.bounds.origin.y, width: headerView.bounds.width, height: headerView.bounds.height)
-        headerView.textLabel?.textColor = .white
+        headerView.textLabel?.textColor = .secondaryLabel
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
