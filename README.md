@@ -9,4 +9,4 @@ The purpose of this Project is to create an interactive Netflix-Replica using on
 
 
 ## Demonstraition 
-![App_Gif](https://i.imgur.com/BxGjdnx.gif)
+![netgif](https://user-images.githubusercontent.com/36043429/174502066-f379579e-7f1a-48eb-86d4-e8a6d7df2646.gif)
